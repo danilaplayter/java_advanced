@@ -1,3 +1,5 @@
+[![Java CI with Gradle](https://github.com/danilaplayter/java_advanced/actions/workflows/main.yml/badge.svg)](https://github.com/danilaplayter/java_advanced/actions/workflows/main.yml)
+
 # java_advanced
 
 1. User (Пользователь). Основная сущность, представляющая пользователя соцсети.
