@@ -32,7 +32,6 @@ public class ElectronicsItem extends InventoryItem {
 
   }
 
-
   @Override
   public boolean equals(Object o) {
     if (o == null || getClass() != o.getClass()) {
