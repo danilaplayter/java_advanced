@@ -14,6 +14,7 @@ public class ElectronicsItem extends InventoryItem {
   /**
    * Конструктор унаследован от InventoryItem, и добавлено поле warrantMonths.
    */
+
   public ElectronicsItem(String sku, String name, int quantity, double unitPrice,
       int warrantyMonths) {
     super(sku, name, quantity, unitPrice);
