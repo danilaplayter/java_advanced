@@ -2,6 +2,10 @@
 
 # java_advanced
 
+Простая социльная сеть.
+
+Мини-проект социальной сети с базовыми сущностями: Пользователь, Пост и Комментарий.
+
 1. User (Пользователь). Основная сущность, представляющая пользователя соцсети.
   1. Атрибуты: userId, userName, email, password, registrationDate, profileInfo.(Все поля должны бать private, потому необходимо добавить get, set)
   2. Методы: createPost(), addComment(), likePost(), editPofile().(Сделайем public)
