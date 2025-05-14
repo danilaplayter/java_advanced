@@ -1,7 +1,7 @@
 package ru.mentee.power.oop.exceptionsDesign.zoo.domain;
 
-import exceptionsDesign.zoo.AnimalNotFoundException;
-import exceptionsDesign.zoo.ZooException;
+import ru.mentee.power.zoo.AnimalNotFoundException;
+import ru.mentee.power.zoo.ZooException;
 import java.util.ArrayList;
 import java.util.List;
 
