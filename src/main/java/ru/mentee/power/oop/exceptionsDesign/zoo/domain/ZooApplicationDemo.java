@@ -1,6 +1,6 @@
 package ru.mentee.power.oop.exceptionsDesign.zoo.domain;
 
-import exceptionsDesign.zoo.ZooException;
+import ru.mentee.power.zoo.ZooException;
 
 public class ZooApplicationDemo {
   public static void main(String[] args) {

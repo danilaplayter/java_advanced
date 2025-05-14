@@ -1,6 +1,6 @@
 package ru.mentee.power.oop.exceptionsDesign.zoo.domain;
 
-import exceptionsDesign.zoo.UnsupportedFoodException;
+import ru.mentee.power.zoo.UnsupportedFoodException;
 
 class Penguin extends Animal {
   public Penguin(String name, int age, String food) {

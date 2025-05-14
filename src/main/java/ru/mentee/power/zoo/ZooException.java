@@ -1,4 +1,4 @@
-package exceptionsDesign.zoo;
+package ru.mentee.power.zoo;
 
 public class ZooException extends Exception {
 
