@@ -31,11 +31,9 @@ class FileManagerTest {
   void setUp() throws IOException {
     fileManager = new FileManager();
 
-    // Создаем тестовый файл
     testFile = tempDir.resolve("test.txt").toFile();
     Files.write(testFile.toPath(), "Hello, world!".getBytes(StandardCharsets.UTF_8));
 
-    // Создаем файл свойств
     propertiesFile = tempDir.resolve("test.properties").toFile();
     Properties props = new Properties();
     props.setProperty("key1", "value1");
@@ -98,9 +96,6 @@ class FileManagerTest {
         .withMessageContaining(".properties");
   }
 
-  // Дополнительный тест для проверки FileLockedException
-  // Этот тест будет пропущен, так как он зависит от возможности захвата блокировки файла,
-  // что может работать по-разному на разных ОС и в разных средах выполнения
   void readTextFileShouldThrowFileLockedException() throws IOException {
     try (RandomAccessFile raf = new RandomAccessFile(testFile, "rw");
         FileLock lock = raf.getChannel().lock()) {
