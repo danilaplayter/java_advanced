@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 @DisplayName("Тесты для SimpleLinkedList")
 class SimpleLinkedListTest {
-
   private SimpleLinkedList<Integer> list;
 
   @BeforeEach

@@ -264,4 +264,5 @@ public class SimpleLinkedList<E> { // Начнем без интерфейсов
     sb.append(']');
     return sb.toString();
   }
+
 }
