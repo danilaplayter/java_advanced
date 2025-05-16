@@ -1,12 +1,6 @@
 package ru.mentee.power.collections;
 
-import java.util.Collection;
-import java.util.Deque;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.Iterator;
 
 public class SimpleLinkedList<E> { // Начнем без интерфейсов
 
@@ -121,29 +115,33 @@ public class SimpleLinkedList<E> { // Начнем без интерфейсов
 
   public E getFirst() {
     final Node<E> f = first;
-    if (f == null)
+    if (f == null) {
       throw new NoSuchElementException();
+    }
     return f.item;
   }
 
   public E getLast() {
     final Node<E> l = last;
-    if (l == null)
+    if (l == null) {
       throw new NoSuchElementException();
+    }
     return l.item;
   }
 
   public E removeFirst() {
     final Node<E> f = first;
-    if (f == null)
+    if (f == null) {
       throw new NoSuchElementException();
+    }
     return unlinkFirst(f);
   }
 
   public E removeLast() {
     final Node<E> l = last;
-    if (l == null)
+    if (l == null) {
       throw new NoSuchElementException();
+    }
     return unlinkLast(l);
   }
 
@@ -153,10 +151,11 @@ public class SimpleLinkedList<E> { // Начнем без интерфейсов
     final Node<E> f = first;
     final Node<E> newNode = new Node<>(null, e, f);
     first = newNode;
-    if (f == null)
+    if (f == null) {
       last = newNode;
-    else
+    } else {
       f.prev = newNode;
+    }
     size++;
   }
 
@@ -164,10 +163,11 @@ public class SimpleLinkedList<E> { // Начнем без интерфейсов
     final Node<E> l = last;
     final Node<E> newNode = new Node<>(l, e, null);
     last = newNode;
-    if (l == null)
+    if (l == null) {
       first = newNode;
-    else
+    } else {
       l.next = newNode;
+    }
     size++;
   }
 
@@ -177,10 +177,11 @@ public class SimpleLinkedList<E> { // Начнем без интерфейсов
     f.item = null;
     f.next = null;
     first = next;
-    if (next == null)
+    if (next == null) {
       last = null;
-    else
+    } else {
       next.prev = null;
+    }
     size--;
     return element;
   }
@@ -191,10 +192,11 @@ public class SimpleLinkedList<E> { // Начнем без интерфейсов
     l.item = null;
     l.prev = null;
     last = prev;
-    if (prev == null)
+    if (prev == null) {
       first = null;
-    else
+    } else {
       prev.next = null;
+    }
     size--;
     return element;
   }
@@ -226,13 +228,15 @@ public class SimpleLinkedList<E> { // Начнем без интерфейсов
   private Node<E> node(int index) {
     if (index < (size >> 1)) {
       Node<E> x = first;
-      for (int i = 0; i < index; i++)
+      for (int i = 0; i < index; i++) {
         x = x.next;
+      }
       return x;
     } else {
       Node<E> x = last;
-      for (int i = size - 1; i > index; i--)
+      for (int i = size - 1; i > index; i--) {
         x = x.prev;
+      }
       return x;
     }
   }
@@ -242,8 +246,9 @@ public class SimpleLinkedList<E> { // Начнем без интерфейсов
   }
 
   private void checkElementIndex(int index) {
-    if (!isElementIndex(index))
+    if (!isElementIndex(index)) {
       throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+    }
   }
 
   @Override
@@ -252,8 +257,9 @@ public class SimpleLinkedList<E> { // Начнем без интерфейсов
     sb.append('[');
     for (Node<E> x = first; x != null; x = x.next) {
       sb.append(x.item == this ? "(this Collection)" : x.item);
-      if (x.next != null)
+      if (x.next != null) {
         sb.append(", ");
+      }
     }
     sb.append(']');
     return sb.toString();
