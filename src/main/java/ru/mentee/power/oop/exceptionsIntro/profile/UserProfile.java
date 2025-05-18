@@ -52,7 +52,7 @@ public class UserProfile {
    * Передача значения эл. почты с валидацией.
    */
   public void setEmail(String email) {
-    if (email == null || email.isEmpty() || email.contains("@")) {
+    if (email == null || email.isEmpty() || (!email.contains("@"))) {
       throw new IllegalArgumentException("Email указан некорректно: " + email);
     }
     this.email = email;
@@ -66,7 +66,7 @@ public class UserProfile {
    * Установка возраста с условием не отрицательной и меньше либо равно 120.
    */
   public void setAge(int age) {
-    if (age >= 0 && age <= 120) {
+    if (age >= 0 || age <= 120) {
       throw new IllegalArgumentException(
           "Возраст должен быть в диапазоне от 0 до 120, получено: " + age);
     }
