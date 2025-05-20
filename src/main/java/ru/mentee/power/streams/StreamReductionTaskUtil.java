@@ -26,7 +26,6 @@ public class StreamReductionTaskUtil {
     return stream.filter(n -> n >= 1 && n <= 100)
         .sum();
   }
-
   public static OptionalLong calculateProduct1to10(IntStream stream) {
     return stream.filter(n -> n >= 1 && n <= 10)
         .asLongStream()
