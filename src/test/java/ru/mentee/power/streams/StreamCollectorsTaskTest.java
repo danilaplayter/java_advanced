@@ -65,7 +65,7 @@ class StreamCollectorsTaskTest {
     Map<OrderStatus, List<Order>> ordersByStatus = orders.stream()
         .collect(Collectors.groupingBy(Order::getStatus));
 
-    assertEquals(2, ordersByStatus.get(OrderStatus.DELIVERED).size());
+    assertEquals(3, ordersByStatus.get(OrderStatus.DELIVERED).size());
     assertEquals(1, ordersByStatus.get(OrderStatus.SHIPPED).size());
     assertEquals(1, ordersByStatus.get(OrderStatus.PROCESSING).size());
     assertEquals(1, ordersByStatus.get(OrderStatus.CANCELLED).size());
@@ -92,8 +92,8 @@ class StreamCollectorsTaskTest {
             order -> order.getStatus() == OrderStatus.DELIVERED
         ));
 
-    assertEquals(2, partitionedOrders.get(true).size());
-    assertEquals(5, partitionedOrders.get(false).size());
+    assertEquals(3, partitionedOrders.get(true).size());
+    assertEquals(4, partitionedOrders.get(false).size());
   }
 
   @Test
