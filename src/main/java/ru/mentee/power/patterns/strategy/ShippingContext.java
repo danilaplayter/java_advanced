@@ -12,6 +12,7 @@ public class ShippingContext {
     if (strategy == null) {
       return 0.0;
     }
+
     return strategy.calculate(order);
   }
 }
