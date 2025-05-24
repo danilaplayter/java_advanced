@@ -30,5 +30,6 @@ public class NotificationService {
 
     service.setNotificationMethod(new TelegramNotification());
     service.notifyUser(msg, "@telegram_user");
+
   }
 }
