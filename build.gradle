@@ -11,7 +11,7 @@ repositories {
     mavenCentral()
 }
 
-java{
+java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
 }
@@ -23,19 +23,25 @@ checkstyle {
 }
 
 dependencies {
+    // Основные зависимости
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    // Тестовые зависимости
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-
     testImplementation 'org.mockito:mockito-core:5.7.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:5.7.0'
-
     testImplementation 'org.assertj:assertj-core:3.24.2'
+
+    // Для тестов тоже нужен Lombok
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 
 test {
     useJUnitPlatform()
     finalizedBy jacocoTestReport
-
     testLogging {
         events "passed", "skipped", "failed"
     }
@@ -47,7 +53,6 @@ jacoco {
 
 jacocoTestReport {
     dependsOn test
-
     reports {
         html.required = true
         xml.required = true
