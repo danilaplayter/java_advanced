@@ -3,7 +3,6 @@ package ru.mentee.power.oop.finaltask.animal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.mentee.power.oop.finaltask.model.animal.Animal;
 import ru.mentee.power.oop.finaltask.model.animal.Lion;
 import ru.mentee.power.oop.finaltask.model.animal.Snake;
 import ru.mentee.power.oop.finaltask.model.behavior.MoveBehavior;
