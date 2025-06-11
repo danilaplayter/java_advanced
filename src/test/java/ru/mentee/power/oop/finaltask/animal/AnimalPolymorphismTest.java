@@ -3,9 +3,17 @@ package ru.mentee.power.oop.finaltask.animal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.mentee.power.oop.finaltask.behavior.MoveBehavior;
-import ru.mentee.power.oop.finaltask.behavior.SoundBehavior;
-import ru.mentee.power.oop.finaltask.behavior.impl.*;
+import ru.mentee.power.oop.finaltask.model.animal.Animal;
+import ru.mentee.power.oop.finaltask.model.animal.Lion;
+import ru.mentee.power.oop.finaltask.model.animal.Snake;
+import ru.mentee.power.oop.finaltask.model.behavior.MoveBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.SoundBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.ChirpBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.FlyBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.HissBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.RoarBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.SlitherBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.WalkBehavior;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -70,13 +78,5 @@ class AnimalPolymorphismTest {
     testSnake.setSoundBehavior(new ChirpBehavior());
     testSnake.performSound();
     assertThat(testSnake.getSoundBehavior()).isInstanceOf(ChirpBehavior.class);
-  }
-
-  private MoveBehavior getMoveBehavior(Animal animal) {
-    return animal.moveBehavior;
-  }
-
-  private SoundBehavior getSoundBehavior(Animal animal) {
-    return animal.soundBehavior;
   }
 }

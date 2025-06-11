@@ -1,16 +1,14 @@
-package ru.mentee.power.oop.finaltask.animal;
+package ru.mentee.power.oop.finaltask.model.animal;
 
-import ru.mentee.power.oop.finaltask.behavior.impl.HissBehavior;
-import ru.mentee.power.oop.finaltask.behavior.impl.SlitherBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.HissBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.SlitherBehavior;
 
 public class Snake extends Animal {
   private final boolean isPoisonous;
 
   public Snake(String name, int age, boolean isPoisonous) {
-    super(name, age);
+    super(name, age, new SlitherBehavior(), new HissBehavior());
     this.isPoisonous = isPoisonous;
-    this.moveBehavior = new SlitherBehavior();
-    this.soundBehavior = new HissBehavior();
   }
 
   @Override

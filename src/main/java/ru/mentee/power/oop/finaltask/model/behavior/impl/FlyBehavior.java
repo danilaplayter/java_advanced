@@ -1,6 +1,6 @@
-package ru.mentee.power.oop.finaltask.behavior.impl;
+package ru.mentee.power.oop.finaltask.model.behavior.impl;
 
-import ru.mentee.power.oop.finaltask.behavior.MoveBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.MoveBehavior;
 
 public class FlyBehavior implements MoveBehavior {
 

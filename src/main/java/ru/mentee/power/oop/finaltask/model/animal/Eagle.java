@@ -1,17 +1,17 @@
-package ru.mentee.power.oop.finaltask.animal;
+package ru.mentee.power.oop.finaltask.model.animal;
 
-import ru.mentee.power.oop.finaltask.behavior.impl.ChirpBehavior;
-import ru.mentee.power.oop.finaltask.behavior.impl.FlyBehavior;
+import lombok.Getter;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.ChirpBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.FlyBehavior;
 
+@Getter
 public class Eagle extends Animal {
 
   private double wingSpan;
 
   public Eagle(String name, int age, double wingSpan) {
-    super(name, age);
+    super(name, age, new FlyBehavior(), new ChirpBehavior());
     this.wingSpan = wingSpan;
-    this.soundBehavior = new ChirpBehavior();
-    this.moveBehavior = new FlyBehavior();
   }
 
   @Override
@@ -19,9 +19,5 @@ public class Eagle extends Animal {
     System.out.println("Имя: " + getName());
     System.out.println("Возраст: " + getAge());
     System.out.println("Размах крыльев: " + getWingSpan());
-  }
-
-  public double getWingSpan() {
-    return wingSpan;
   }
 }

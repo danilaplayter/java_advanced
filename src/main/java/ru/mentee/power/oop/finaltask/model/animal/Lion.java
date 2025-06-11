@@ -1,17 +1,15 @@
-package ru.mentee.power.oop.finaltask.animal;
+package ru.mentee.power.oop.finaltask.model.animal;
 
-import ru.mentee.power.oop.finaltask.behavior.impl.RoarBehavior;
-import ru.mentee.power.oop.finaltask.behavior.impl.WalkBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.RoarBehavior;
+import ru.mentee.power.oop.finaltask.model.behavior.impl.WalkBehavior;
 
 public class Lion extends Animal {
 
   private String maneColor;
 
   public Lion(String name, int age, String maneColor) {
-    super(name, age);
+    super(name, age, new WalkBehavior(), new RoarBehavior());
     this.maneColor = maneColor;
-    this.moveBehavior = new WalkBehavior();
-    this.soundBehavior = new RoarBehavior();
   }
 
   @Override
