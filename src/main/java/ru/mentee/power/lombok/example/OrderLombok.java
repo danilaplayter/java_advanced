@@ -2,13 +2,12 @@ package ru.mentee.power.lombok.example;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.With;
 import lombok.experimental.Accessors;
 
 @Data
 @AllArgsConstructor
 @Accessors(chain = true)
-public class Order_Lombok {
+public class OrderLombok {
   private final String orderId;
   private String customerName;
   private String productName;

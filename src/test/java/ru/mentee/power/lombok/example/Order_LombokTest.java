@@ -4,7 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class Order_LombokTest {
+class OrderLombokTest {
 
   @Test
   @DisplayName("Конструктор и геттеры должны работать корректно")
@@ -16,7 +16,7 @@ class Order_LombokTest {
     double pricePerUnit = 50000.0;
     OrderStatus status = OrderStatus.NEW;
 
-    Order_Lombok order = new Order_Lombok(orderId, customerName, productName, quantity, pricePerUnit, status);
+    OrderLombok order = new OrderLombok(orderId, customerName, productName, quantity, pricePerUnit, status);
 
     assertThat(order.getOrderId()).isEqualTo(orderId);
     assertThat(order.getCustomerName()).isEqualTo(customerName);
@@ -30,7 +30,7 @@ class Order_LombokTest {
   @Test
   @DisplayName("Сеттеры должны изменять значения полей")
   void settersShouldChangeFieldValues() {
-    Order_Lombok order = new Order_Lombok("id1", "Cust1", "Prod1", 1, 10.0, OrderStatus.NEW)
+    OrderLombok order = new OrderLombok("id1", "Cust1", "Prod1", 1, 10.0, OrderStatus.NEW)
         .setCustomerName("Новый Клиент")
         .setQuantity(5);
 
@@ -42,9 +42,9 @@ class Order_LombokTest {
   @Test
   @DisplayName("equals и hashCode должны корректно сравнивать объекты")
   void equalsAndHashCodeShouldWorkCorrectly() {
-    Order_Lombok order1 = new Order_Lombok("o1", "C1", "P1", 1, 10.0, OrderStatus.NEW);
-    Order_Lombok order2 = new Order_Lombok("o1", "C1", "P1", 1, 10.0, OrderStatus.NEW);
-    Order_Lombok order3 = new Order_Lombok("o2", "C2", "P2", 2, 20.0, OrderStatus.PROCESSING);
+    OrderLombok order1 = new OrderLombok("o1", "C1", "P1", 1, 10.0, OrderStatus.NEW);
+    OrderLombok order2 = new OrderLombok("o1", "C1", "P1", 1, 10.0, OrderStatus.NEW);
+    OrderLombok order3 = new OrderLombok("o2", "C2", "P2", 2, 20.0, OrderStatus.PROCESSING);
 
     assertThat(order1).isEqualTo(order2);
     assertThat(order1.hashCode()).isEqualTo(order2.hashCode());
@@ -54,7 +54,7 @@ class Order_LombokTest {
   @Test
   @DisplayName("toString должен возвращать непустую строку")
   void toStringShouldReturnNonEmptyString() {
-    Order_Lombok order = new Order_Lombok("idToString", "CustToString", "ProdToString", 1, 1.0, OrderStatus.NEW);
+    OrderLombok order = new OrderLombok("idToString", "CustToString", "ProdToString", 1, 1.0, OrderStatus.NEW);
     assertThat(order.toString())
         .isNotNull()
         .contains("Order_Lombok")
