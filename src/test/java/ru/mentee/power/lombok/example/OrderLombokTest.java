@@ -57,7 +57,7 @@ class OrderLombokTest {
     OrderLombok order = new OrderLombok("idToString", "CustToString", "ProdToString", 1, 1.0, OrderStatus.NEW);
     assertThat(order.toString())
         .isNotNull()
-        .contains("Order_Lombok")
+        .contains("OrderLombok")
         .contains("idToString")
         .contains("status=NEW");
   }
