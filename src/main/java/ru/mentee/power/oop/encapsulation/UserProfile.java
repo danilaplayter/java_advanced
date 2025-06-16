@@ -54,7 +54,13 @@ public class UserProfile {
    * Сеттер с валидацией.
    */
   public void setEmail(String email) {
-    if (email == null || !email.contains("@")) {
+    if (email == null) {
+      throw new IllegalArgumentException("Email cannot be null");
+    }
+
+    // Простая, но более надежная проверка формата email
+    String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+    if (!email.matches(emailRegex)) {
       throw new IllegalArgumentException("Email must be valid and contain '@'");
     }
     this.email = email;
